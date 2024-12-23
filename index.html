@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rntqy website</title>
+    <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
 </head>
@@ -19,6 +20,21 @@
                 <li><a href="#rules">ルール</a></li>
                 <li><a href="#join">参加方法</a></li>
             </ul>
+            <ul>
+                <li></li>
+            </ul>
+            <button id="menu-toggle-button" class="menu-button">🌐</button>
+            <div id="slide-menu">
+            <div id="language-switcher">
+                <ul>
+                    <li></li>
+                    <li><img id="ja" src="ja.png" data-lang="ja" class="flag-button"></button></li>
+                    <li><img id="en" src="en.png" data-lang="en" class="flag-button"></button></li>
+                    <li><img id="zh" src="zh.png" data-lang="zh" class="flag-button"></button></li>
+                    <li><img id="ko" src="kr.png" data-lang="ko" class="flag-button"></button></li>
+                    <li></li>
+                </ul>
+            </div>
         </nav>
     </header>
     <main>
@@ -58,6 +74,10 @@
         </section>
     </main>
 
+    <div id="loading-overlay" style="display: none;">
+    <div class="spinner"></div>
+    </div>
+    
     <div id="contact-section" style="margin-top: 50px; padding: 20px; border: 2px solid #ccc; border-radius: 10px; background-color: #f9f9f9; max-width: 500px; margin: 0 auto;">
         <h2 id="completion-message" style="display: none; color: green; font-weight: bold;">送信完了</h2>
         <h2>お問い合わせ</h2>
@@ -128,6 +148,6 @@
 
     <footer class="footer">
         <p>&copy; rntqy minecraft server</p>
-    </footer>
+    </footer>    
 </body>
 </html>

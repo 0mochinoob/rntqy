@@ -51,6 +51,13 @@ main {
     background: #d5f9ff;
 }
 
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
 .hero h1 {
     font-size: 2.5rem;
     color: #333;
@@ -88,6 +95,252 @@ main {
     padding: 10px 0;
     background-color: #a0f1ff;
     font-size: 0.8rem;
+}
+
+.language-buttons {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+.flag-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 60%;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+.flag-button:hover {
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1); /* ホバー時に少し拡大 */
+  }
+  
+.flag-button:active {
+    transform: scale(0.95); /* クリック時に少し縮小 */
+  }
+
+/* メニューボタン */
+.menu-button {
+    position: fixed;
+    top: 75px;
+    right: 7.5px;
+    background-color: #c8edff;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001; /* メニューより上に表示 */
+  }
+
+.menu-button.clicked {
+    transform: translateY(75px); /* 下に10px動く */
+  }
+
+.menu {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: none; /* 初期状態は非表示 */
+    z-index: 1002;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* アニメーション */
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  
+  /* メニュー表示時 */
+.menu.visible {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 半透明の黒 */
+    backdrop-filter: blur(5px); /* 背景をぼかす */
+    z-index: 1000; /* メニューより下、ボタンより上 */
+    opacity: 0;
+    pointer-events: none; /* 初期状態ではクリックを無効化 */
+    transition: opacity 0.3s ease;
+  }
+
+  .menu-button.active {
+    transform: translateY(75px); /* 下に5px移動 */
+  }
+  
+  /* 背景ぼかし表示時 */
+  .menu-overlay.visible {
+    opacity: 1;
+    pointer-events: all; /* クリックを有効化 */
+  }  
+
+#slide-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* 初期位置は画面外 */
+    width: 300px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 0px;
+}
+
+#slide-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#slide-menu li {
+    margin-bottom: 20px;
+}
+
+.language-option {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 18px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.language-option:hover {
+    background-color: #4fe5ff;
+    color: #ffffff;
+}
+
+#loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 1002;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-button:active {
+    transform: translateY(4px); /* ボタンを下に動かす */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* 影を浅くする */
+}
+
+.menu-button.clicked {
+    transform: translateY(-4px); /* ボタンを上に動かす */
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ccc;
+    border-top: 6px solid #4fe5ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#slide-menu {
+    position: fixed;
+    top: 0;
+    right: -1000x;
+    width: 300px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.2);
+    transition: right 0.4s ease;
+    z-index: 1000;
+    padding: 0px;
+}
+
+#slide-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#slide-menu li {
+    margin-bottom: 12px;
+}
+
+.language-option {
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    text-align: left;
+    font-size: 10px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.language-option:hover {
+    background-color: #4fe5ff;
+    color: #ffffff;
+}
+
+#loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 1002;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ccc;
+    border-top: 6px solid #4fe5ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .box {
