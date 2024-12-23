@@ -135,6 +135,11 @@ main {
     z-index: 1001; /* メニューより上に表示 */
   }
 
+.menu-button:hover {
+    background-color: #bff5ff;
+    transform: scale(1.1);
+}
+
 .menu-button.clicked {
     transform: translateY(75px); /* 下に10px動く */
   }
@@ -251,13 +256,89 @@ main {
     transform: translateY(-4px); /* ボタンを上に動かす */
 }
 
+/* ベーススタイル */
+body {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+/* 背景ぼかし用 */
+#background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 半透明 */
+    backdrop-filter: blur(10px); /* 背景ぼかし */
+    z-index: 999; /* メニューの後ろに配置 */
+    display: none; /* 初期状態で非表示 */
+  }
+  
+  /* メニュー */
+  .menu-slide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: white;
+    transform: translateX(-100%); /* スライドを隠す */
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .menu-slide.open {
+    transform: translateX(0); /* スライドを表示 */
+  }
+  
+  /* 背景ぼかしが表示されるとき */
+  #background-blur.active {
+    display: block;
+  }  
+
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+.theme-toggle:hover {
+    background-color: #2980b9;
+  }
+  
+.theme-toggle:active {
+    transform: scale(0.95);
+  }  
+
 .spinner {
-    width: 50px;
-    height: 50px;
-    border: 6px solid #ccc;
-    border-top: 6px solid #4fe5ff;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 50px solid #ccc;
+    border-top: 50px solid #4fe5ff;
+    border-radius: 100%;
     animation: spin 1s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
 }
 
 @keyframes spin {
