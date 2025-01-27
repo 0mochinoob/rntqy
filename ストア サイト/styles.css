@@ -1,0 +1,233 @@
+.box {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.bzbox {
+    background-color: #ffb342;
+    background-size: 1000% 1000%;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.bzbox::after {
+    content: ''; /* 擬似要素を使用 */
+    position: absolute;
+    top: -150%; /* 光沢の初期位置 */
+    left: -150%; /* 光沢の初期位置 */
+    width: 500%; /* 光沢エリアの幅 */
+    height: 500%; /* 光沢エリアの高さ */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%);
+    transform: rotate(-45deg); /* 光沢の角度を調整 */
+    animation: shine 1.75s infinite; /* 光沢のアニメーション */
+    pointer-events: none; /* 光沢部分をクリック不可に */
+}
+
+.slbox {
+    background-color: #C0C0C0;
+    background-size: 1000% 1000%;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.slbox::after {
+    content: ''; /* 擬似要素を使用 */
+    position: absolute;
+    top: -150%; /* 光沢の初期位置 */
+    left: -150%; /* 光沢の初期位置 */
+    width: 500%; /* 光沢エリアの幅 */
+    height: 500%; /* 光沢エリアの高さ */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%);
+    transform: rotate(-45deg); /* 光沢の角度を調整 */
+    animation: shine 1.75s infinite; /* 光沢のアニメーション */
+    pointer-events: none; /* 光沢部分をクリック不可に */
+}
+
+.gdbox {
+    background: linear-gradient(135deg, 
+        #FFD700,
+        #e2b40c,
+        #E2B917
+    );
+    background-size: 1000% 1000%;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.gdbox::after {
+    content: ''; /* 擬似要素を使用 */
+    position: absolute;
+    top: -150%; /* 光沢の初期位置 */
+    left: -150%; /* 光沢の初期位置 */
+    width: 500%; /* 光沢エリアの幅 */
+    height: 500%; /* 光沢エリアの高さ */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%);
+    transform: rotate(-45deg); /* 光沢の角度を調整 */
+    animation: shine 1.75s infinite; /* 光沢のアニメーション */
+    pointer-events: none; /* 光沢部分をクリック不可に */
+}
+
+@keyframes shine {
+    0% {
+        transform: translate(150%, -150%) rotate(-45deg);
+    }
+    100% {
+        transform: translate(-150%, 150%) rotate(-45deg);
+    }
+}
+
+.plbox {
+    background: #e5e4e2;
+    background-size: 1000% 1000%;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.plbox::after {
+    content: ''; /* 擬似要素を使用 */
+    position: absolute;
+    top: -150%; /* 光沢の初期位置 */
+    left: -150%; /* 光沢の初期位置 */
+    width: 500%; /* 光沢エリアの幅 */
+    height: 500%; /* 光沢エリアの高さ */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%);
+    transform: rotate(-45deg); /* 光沢の角度を調整 */
+    animation: shine 1.75s infinite; /* 光沢のアニメーション */
+    pointer-events: none; /* 光沢部分をクリック不可に */
+}
+
+.ttbox {
+    background: #a7a5a2;
+    background-size: 1000% 1000%;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ttbox::after {
+    content: ''; /* 擬似要素を使用 */
+    position: absolute;
+    top: -150%; /* 光沢の初期位置 */
+    left: -150%; /* 光沢の初期位置 */
+    width: 500%; /* 光沢エリアの幅 */
+    height: 500%; /* 光沢エリアの高さ */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%);
+    transform: rotate(-45deg); /* 光沢の角度を調整 */
+    animation: shine 1.75s infinite; /* 光沢のアニメーション */
+    pointer-events: none; /* 光沢部分をクリック不可に */
+}
+
+.dibox {
+    background-size: 100% 100%;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.dibox::after {
+    content: ''; /* 擬似要素を使用 */
+    position: absolute;
+    top: -150%; /* 光沢の初期位置 */
+    left: -150%; /* 光沢の初期位置 */
+    width: 500%; /* 光沢エリアの幅 */
+    height: 500%; /* 光沢エリアの高さ */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%);
+    transform: rotate(-45deg); /* 光沢の角度を調整 */
+    animation: shine 1.75s infinite; /* 光沢のアニメーション */
+    pointer-events: none; /* 光沢部分をクリック不可に */
+}
+
+.dbackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(di.png) repeat;
+    background-size: cover;
+    transform: translate(0, 0);
+    will-change: transform;
+}
+
+.cbackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('cy.png') repeat;
+    background-size: cover;
+    transform: translate(0, 0);
+    will-change: transform;
+}
+
+.cybox {
+    background-size: 100% 100%;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cybox::after {
+    content: ''; /* 擬似要素を使用 */
+    position: absolute;
+    top: -150%; /* 光沢の初期位置 */
+    left: -150%; /* 光沢の初期位置 */
+    width: 500%; /* 光沢エリアの幅 */
+    height: 500%; /* 光沢エリアの高さ */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 70%);
+    transform: rotate(-45deg); /* 光沢の角度を調整 */
+    animation: shine 1.75s infinite; /* 光沢のアニメーション */
+    pointer-events: none; /* 光沢部分をクリック不可に */
+}
+
+.left{
+    float: left;
+}

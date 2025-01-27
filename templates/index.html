@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rntqy website</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="ar"><img src="{{ url_for('static', filename='images/IRUKA.gif') }}" alt="ar"><a href="#" class="logo" id="logo-link">　rntqy</a></div>
+        <section id="music-toggle"></section>
+            <ul>
+                <li><a href="#about"><div class="bu">紹介</div></a></li>
+                <li><a href="#event"><div class="bu">イベント情報</div></a></li>
+                <li><a href="#update"><div class="bu">アップデート情報</div></a></li>
+                <li><a href="#picture"><div class="bu">ゲーム内写真</div></a></li>
+                <li><a href="#rules"><div class="bu">ルール</div></a></li>
+                <li><a href="#join"><div class="bu">参加方法</div></a></li>
+                <li><a href="#ques"><div class="bu">質問箱</div></a></li>
+            </ul>
+            <ul>
+                <li></li>
+            </ul>
+            <button id="menu-toggle-button" class="menu-button">🌍</button><button id="close-menu-button" class="close-button" style="display: none;">✖</button>
+            <div id="slide-menu">
+            <div id="language-switcher">
+                <ul>
+                    <h2>　　　Language　β　</h2>
+                </ul>
+                <ul>
+                    <li></li>
+                    <li><img id="ja" src="{{ url_for('static', filename='images/ja.png') }}" data-lang="ja" class="flag-button"></button></li>
+                    <li><img id="en" src="{{ url_for('static', filename='images/en.png') }}" data-lang="en" class="flag-button"></button></li>
+                    <li><img id="zh" src="{{ url_for('static', filename='images/zh.png') }}" data-lang="zh" class="flag-button"></button></li>
+                    <li><img id="ko" src="{{ url_for('static', filename='images/kr.png') }}" data-lang="ko" class="flag-button"></button></li>
+                    <li></li>
+                </ul>
+                <ul>
+                    <li></li>
+                    <li><img id="tw" src="{{ url_for('static', filename='images/tw.png') }}" data-lang="tw" class="flag-button"></button></li>
+                    <li><img id="ru" src="{{ url_for('static', filename='images/ru.png') }}" data-lang="ru" class="flag-button"></button></li>
+                    <li><img id="fr" src="{{ url_for('static', filename='images/fr.png') }}" data-lang="fr" class="flag-button"></button></li>
+                    <li><img id="de" src="{{ url_for('static', filename='images/de.png') }}" data-lang="de" class="flag-button"></button></li>
+                    <li></li>
+                </ul>
+                <ul>
+                    <li></li>
+                    <li><img id="it" src="{{ url_for('static', filename='images/it.png') }}" data-lang="it" class="flag-button"></button></li>
+                    <li><img id="ar" src="{{ url_for('static', filename='images/ar.png') }}" data-lang="ar" class="flag-button"></button></li>
+                    <li><img id="pt" src="{{ url_for('static', filename='images/pt.png') }}" data-lang="pt" class="flag-button"></button></li>
+                    <li><img id="hi" src="{{ url_for('static', filename='images/hi.png') }}" data-lang="hi" class="flag-button"></button></li>
+                </ul>                
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>最高のPvP練習を。</h1>
+            <p>rntqyでスリル満点の対戦を楽しもう！</p>
+            <button id="join-button">今すぐサーバーに参加</button>
+        </section>
+
+        <section id="about" class="about hero">
+            <div class="box">
+                <h2>rntqyで楽しいバトルをしよう</h2>
+                <p>1:<strong> 日本にサーバーがあるから東アジアからの接続が速い</strong></p>
+                <p>2:<strong> ユニークなキットやエフェクトを用意</strong></p>
+                <p>3:<strong> 広大なFFAマップで走り回ろう</strong></p>
+                <p>4:<strong> 専用Discordのボイスチャットでバトルがもっと楽しくなる</strong></p>
+                <p><div class="ds"><img src="{{ url_for('static', filename='images/discord.gif') }}" alt="ds"><a href="https://discord.gg/7nQxhAjtHV" class="discord-button" target="_blank" rel="noopener noreferrer">Discordサーバーへ参加</a></p>
+            </div>
+        </section>
+
+        <section id="event" class="event">
+            <div class="box">
+                <h2>イベント情報</h2>
+                <p>2/14～3/17にrntqyトーナメント企画を開催</p>
+            </div>
+        </section>
+
+        <section id="update" class="update">
+            <div class="box">
+                <h2>アップデート情報</h2>
+                <p>【開発中】FFAマップとDuelマップと闘技場マップの制作</p>
+                <p>Friend、Party機能の追加</p>
+                <p>ネームタグの色の変更機能の追加</p>
+                <p>ランク制度の追加</p>
+                <p>アンチチートシステムの強化</p>
+            </div>
+        </section>
+
+        <section id="picture" class="picture">
+            <div class="box">
+                <h2>ゲーム内写真</h2>
+                <p>スポーンロビー</p>
+                <img src="spawnlobby.png">
+                <p>FFAロビー</p>
+                <img src="ffalobby.png">
+            </div>
+        </section>
+
+        <section id="rules" class="rules">
+            <div class="box ">
+                <h2>ルール</h2>
+                <p>1:<strong> チート等の不正ツール使用禁止</strong></p>
+                <p>2:<strong> 暴言の禁止</strong></p>
+                <p>3:<strong> サーバー攻撃の禁止</strong></p>
+                <p>4:<strong> 荒らし目的のスパム禁止</strong></p>
+                <p>5:<strong> あまりに酷い下ネタの禁止</strong></p>
+                <p>以上のルールに違反した場合、<div class="red">ペナルティが課せられます。</div></p>
+            </div>
+        </section>
+
+        <section id="join" class="join">
+            <div class="box">
+                <h2>参加方法</h2>
+                <p>IPアドレス: <strong>play.rntqy.net</strong></p>
+                <p>対応バージョン: <strong>Java Edition 1.20～1.21.4</strong></p>
+                <p><div class="ds"><img src="{{ url_for('static', filename='images/discord.gif') }}" alt="ds"><a href="https://discord.gg/7nQxhAjtHV" class="discord-button" target="_blank" rel="noopener noreferrer">Discordサーバーへ参加</a></p>
+            </div>
+        </section>
+
+        <section id="ques" class="ques">     
+            <div class="box">
+              <div class="cont">
+                <form id="question-form">
+                    <textarea id="question-content" placeholder="Enter your question..." required></textarea>
+                    <input type="text" id="user-id" placeholder="Enter your user ID" required />
+                    <button type="submit">Submit Question</button>
+                </form>
+                <div id="questions-container"></div>
+                <button type="button" id="find" class="find" onclick="sendQuestion()">投稿</button>
+                </div>
+              </div>
+            </div>
+          </section>          
+    </main>
+
+    <div id="loading-overlay" style="display: none;">
+    <div class="spinner"></div>
+    </div>
+    
+    <div id="contact-section" style="margin-top: 50px; padding: 20px; border: 1px solid lightcoral; border-radius: 10px; background-color: #f9f9f9; max-width: 500px; margin: 0 auto;">
+        <h2 id="completion-message" style="display: none; color: green; font-weight: bold;">送信完了</h2>
+        <h2>お問い合わせ</h2>
+        <form id="contactForm">
+            <label for="email">メールアドレス</label><br>
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;"><br>
+    
+            <label for="name">名前</label><br>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;"><br>
+    
+            <label for="message">要件</label><br>
+            <textarea id="message" name="message" required style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; height: 100px;"></textarea><br>
+    
+            <button type="submit" style="width: 100%; padding: 10px; background-color: #b3f2ff; color: black; border: none; border-radius: 5px; cursor: pointer;">
+                送る
+            </button>
+        </form>
+    </div>
+    
+    <div id="loading-screen" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px); z-index: 1000; text-align: center; color: white; font-size: 20px;">
+        <div class="spinner" style="margin: 20% auto; border: 8px solid #333; border-top: 8px solid #4CAF50; border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite;"></div>
+        <div id="success-animation" style="display: none; text-align: center; margin-top: 20px;">
+            <div class="checkmark" style="font-size: 50px; color: #4CAF50;">✔</div>
+            <div style="font-size: 18px; font-weight: bold;">送信完了</div>
+        </div>
+    </div>
+</body>
+    
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+    
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.display = 'block';
+    
+            setTimeout(() => {
+                const spinner = document.querySelector('.spinner');
+                const successAnimation = document.getElementById('success-animation');
+                spinner.style.display = 'none';
+                successAnimation.style.display = 'block';
+    
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                    document.getElementById('completion-message').style.display = 'block';
+                }, 2000);
+            }, 5000);
+    
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+    
+            const mailtoLink = `mailto:noob_0mochi@outlook.com?subject=お問い合わせ（${name}）&body=${message}`;
+            window.open(mailtoLink, '_blank');
+    
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+
+    <footer class="footer">
+        <p>rntqy minecraft server</p>
+    </footer>    
+</body>
+</html>

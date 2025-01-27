@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft ログイン</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Minecraft ログイン</h1>
+        <form id="loginForm">
+            <label for="minecraftId">Minecraft ID:</label>
+            <input type="text" id="minecraftId" name="minecraftId" placeholder="ユーザー名を入力" required>
+            <button type="submit">ログイン</button>
+        </form>
+    </div>
+    
+    <div class="user-info">
+        <img id="userSkin" src="" alt="ユーザーのスキン" class="skin-image">
+        <div id="usernameDisplay"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
